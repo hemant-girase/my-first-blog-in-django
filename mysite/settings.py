@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'blog\static\js', 'serviceworker.js')
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'blog\static\images'), ]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'pwa'
 ]
 
 MIDDLEWARE = [
@@ -120,3 +122,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+
+
+#progressive app
+
+PWA_APP_NAME = 'My App'
+PWA_APP_DESCRIPTION = "My app description"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff' 
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default' 
+#PWA_APP_ICONS = [ { 'src': 'blog\static\images\my_app_icon.png', 'sizes': '160x160' } ]
+#PWA_APP_ICONS_APPLE = [ { 'src': 'blog\static\images\my_apple_icon.png', 'sizes': '160x160' } ]
+#PWA_APP_SPLASH_SCREEN = [ { 'src': 'blog\static\images\icons\splash-640x1136.png', 'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)' } ] 
+#PWA_APP_DIR = 'ltr'
+#PWA_APP_LANG = 'en-US'
+
+PWA_APP_DEBUG_MODE = False
